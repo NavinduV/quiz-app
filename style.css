@@ -1,0 +1,420 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+
+body {
+    color: #fff;
+    background: black;
+    overflow: hidden;
+    
+}
+
+.main {
+    min-height: 100vh;
+    background-image: url(/images/background.jpg);
+    background-size: cover;
+    background-position: center;
+    transition: all 0.5s;
+    pointer-events: auto;
+}
+
+.main.active {
+    filter: blur(15px);
+    pointer-events: none;
+}
+
+.container {   
+    display: flex;
+    height: 100vh;
+    width: 200%;
+}
+
+.home {
+    position: relative;
+    left: -50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content h1 {
+    font-size: 40px;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0,0,0,0.3);
+    margin-bottom: 40px;
+    cursor: default;
+    text-align: center;
+}
+
+.content p {
+    text-align: center;
+}
+
+.start-btn {
+    outline: none;
+    border: 2px solid transparent;
+    background: rgb(0, 140, 40);
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 15px;
+    color: #fff;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 30px;
+    text-align: center;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+}
+
+.start-btn:hover {
+    background: transparent;
+    border: 2px solid rgb(0, 140, 40);
+}
+
+.popup-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    border: 2px solid rgb(0, 140, 40);
+    background: black;
+    border-radius: 8px;
+    padding: 10px 25px;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+.popup-info.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.popup-info h2 {
+    font-size: 40px;
+    color: rgb(0, 140, 40);
+    margin-bottom: 20px;
+}
+
+.popup-info .info {
+    display: inline-block;
+    font-size: 16px;
+    color: #eee;
+    font-weight: 500;
+    margin: 4px 0;
+}
+
+.popup-info .btn-grp {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #ffffffb4;
+    margin-top: 20px;
+}
+
+.popup-info .info-btn {
+    outline: none;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.popup-info .exit-btn {  
+    border: 2px solid transparent;
+    background: rgb(140, 0, 0);  
+    color: #fff;
+    margin-top: 30px;
+    margin-bottom: 12px; 
+    transition: all 0.3s ease-in-out;
+}
+
+.exit-btn:hover {
+    background: transparent;
+    border: 2px solid rgb(0, 140, 40);
+}
+
+.popup-info .exit-btn {
+    border: 2px solid transparent;
+    background: rgb(140, 0, 0);
+    color: #fff;
+    margin-top: 30px;
+    margin-bottom: 12px;
+    transition: all 0.3s ease-in-out;
+}
+
+.exit-btn:hover {
+    background: transparent;
+    border: 2px solid rgb(140, 0, 0);
+}
+
+.popup-info .continue-btn {
+    border: 2px solid rgb(0, 140, 40);
+    background: transparent;
+    color: #fff;
+    margin-top: 30px;
+    margin-bottom: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.continue-btn:hover {
+    color: rgb(0, 140, 40);
+}
+
+.quiz-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: #09001d;
+    position: relative;
+    left: -50%;
+    z-index: 100;
+    transition: 0.8s ease-in-out;
+    transition-delay: 0.25s;
+}
+
+.quiz-section.active {
+    left: 0;
+}
+
+.quiz-section .quiz-box {
+    position: relative;
+    width: 500px;
+    background: transparent;
+    border: 2px solid rgb(0, 140, 40);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.9);
+    transition: 0.3s ease;
+    transition-delay: 0s;
+}
+
+.quiz-section .quiz-box.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+    transition: 1s ease;
+    transition-delay: 1s;
+}
+
+.quiz-box h1 {
+    font-size: 32px;
+    text-align: center;
+    background: linear-gradient(80deg, transparent, rgb(0, 140, 40), transparent);
+    border-radius: 6px;
+}
+
+.quiz-box .quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 2px solid rgb(0, 140, 40);
+}
+
+.quiz-header span {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.quiz-header .quiz-score {
+    background: rgb(0, 140, 40);
+    border-radius: 5px;
+    padding: 5px 8px;
+}
+
+.quiz-box .question-text {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 25px;
+}
+
+.option-list .option {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    font-size: 17px;
+    margin: 15px 0;
+    cursor: pointer;
+}
+
+.option-list .option:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.option-list .option.correct {
+    background: #09001d;
+    color: #00a63d;
+    border-color: #00a63d;
+}
+
+.option-list .option.incorrect {
+    background: #09001d;
+    color: #a60045;
+    border-color: #a60045;
+}
+
+.option-list .option.disabled {
+    pointer-events: none;
+}
+
+.quiz-box .quiz-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid rgb(0, 140, 40);
+    margin-top: 25px;
+    padding: 20px;
+}
+
+.quiz-footer .question-total {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.quiz-footer .next-btn {
+    width: 100px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.1);
+    padding: 5px 8px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    pointer-events: none;
+    transition: 0.3s ease-in-out;
+}
+
+.quiz-footer .next-btn.active {
+    pointer-events: auto;
+    background: transparent;
+    border: 2px solid rgb(0, 140, 40);
+    color: #fff;
+
+}
+
+.quiz-footer .next-btn.active:hover {
+    background: rgb(0, 140, 40);
+}
+
+.result-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 500px;
+    background: transparent;
+    border: 2px solid rgb(0, 140, 40);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3 ease;
+}
+
+.result-box.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.result-box h2 {
+    font-size: 52px;
+}
+
+.result-box .percentage-container {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0 40px;
+}
+
+.percentage-container .circular-progress {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.percentage-container .circular-progress::before {
+    content: '';
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    background: #09001d;
+    border-radius: 50%;
+}
+
+.circular-progress .progress-value {
+    position: relative;
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.percentage-container .score-text {
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.buttons button {
+    width: 130px;
+    height: 46px;
+    background: transparent;
+    padding: 5px 8px;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    font-size: 16px;
+    margin: 0 20px;
+    outline: none;
+}
+
+.buttons .tryAgain-btn {
+    border: 2px solid rgb(140, 0, 0);
+}
+
+.tryAgain-btn:hover {
+    background: rgb(140, 0, 0);
+}
+
+.buttons .goHome-btn {
+    border: 2px solid rgb(0, 140, 40);
+}
+
+.goHome-btn:hover {
+    background: rgb(0, 140, 40);
+}

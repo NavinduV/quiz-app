@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <div class="main">
+        <div class="container">
+            <section class="quiz-section">
+                <div class="quiz-box">
+                    <h1>Web Devop Quiz</h1>
+                    <div class="quiz-header">
+                        <span>Quiz Website Tutorials</span>
+                        <span class="quiz-score"></span>
+                    </div>
+                    <h2 class="question-text"></h2>
+                    <div class="option-list"></div>
+                    <div class="quiz-footer">
+                        <span class="question-total"></span>
+                        <button class="next-btn">Next</button>
+                    </div>
+                </div>
+
+                <div class="result-box">
+                    <h2>Quiz Results!</h2>
+                    <div class="percentage-container">
+                        <div class="circular-progress">
+                            <span class="progress-value"></span>
+                        </div>
+                        <span class="score-text"></span>
+                    </div>
+                    <div class="buttons">
+                        <button class="tryAgain-btn">Try Again</button>
+                        <button class="goHome-btn">Go Home</button>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="home">
+                <div class="content">
+                    <h1>Interactive Quiz WebApp</h1>
+                    <p>This is an interactive quiz web application which can be used to perform a quiz and determine the progress of students. Click the start button and then the quiz will be started.</p>
+                    <button class="start-btn">
+                        Start Quiz
+                    </button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="popup-info">
+        <h2>Quiz Guide</h2>
+        <span class="info">1. Once started you can not go back. you need to complete the quiz.</span>
+        <span class="info">2. Can not reconsider your answers. So select correct answer at the first time..</span>
+        <span class="info">3. your results will be shown after you select answers for all the quesions.</span>
+        <div class="btn-grp">
+            <button class="info-btn exit-btn">Exit Quiz</button>
+            <a href="#" class="info-btn continue-btn">Continue</a>
+        </div>
+    </div>
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
